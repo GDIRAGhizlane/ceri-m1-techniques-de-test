@@ -1,55 +1,96 @@
 package fr.univavignon.pokedex.api;
 
-import java.util.Comparator;
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+import java.util.ArrayList;
 import java.util.List;
 
-/**
- * IPokedex interface. An IPokedex aims to store all information about
- * captured pokemon, as their default metadata as well.
- * 
- * @author fv
- */
-public interface IPokedexTest extends IPokemonMetadataProvider, IPokemonFactory {
-	
-	/**
-	 * Returns the number of pokemon this pokedex contains.
-	 * 
-	 * @return Number of pokemon in this pokedex.
-	 */
-	int size();
-	
-	/**
-	 * Adds the given <tt>pokemon</tt> to this pokedex and returns
-	 * it unique index.
-	 * 
-	 * @param pokemon Pokemon to add to this pokedex.
-	 * @return Index of this pokemon relative to this pokedex.
-	 */
-	int addPokemon(Pokemon pokemon);
-	
-	/**
-	 * Locates the pokemon identified by the given <tt>id</tt>.
-	 * 
-	 * @param id Unique pokedex relative identifier.
-	 * @return Pokemon denoted by the given identifier.
-	 * @throws PokedexException If the given <tt>index</tt> is not valid.
-	 */
-	Pokemon getPokemon(int id) throws PokedexException;
-	
-	/**
-	 * Returns an unmodifiable list of all pokemons this pokedex contains.
-	 * 
-	 * @return Unmodifiable list of all pokemons.
-	 */
-	List<Pokemon> getPokemons();
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.Mockito;
 
-	/**
-	 * Returns an unmodifiable list of all pokemons this pokedex contains.
-	 * The list view will be sorted using the given <tt>order</tt>.
-	 * 
-	 * @param order Comparator instance used for sorting the created view.
-	 * @return Sorted unmodifiable list of all pokemons.
-	 */
-	List<Pokemon> getPokemons(Comparator<Pokemon> order);
+public class IPokedexTest  {
 	
+	public static List<Pokemon> pokedex1;
+    IPokedex test;
+    IPokemonFactory pokemonFactory1;
+    IPokemonMetadataProvider pokemonMD1;
+    
+    @Before
+    public void init() {
+    	pokedex1 = new ArrayList<Pokemon>();
+    	test = mock(IPokedex.class);
+    	pokemonFactory1 = mock(IPokemonFactory.class);
+    	pokemonMD1 = mock(IPokemonMetadataProvider.class);
+    }
+    
+	
+	@Test
+	public void size() {
+		addPokemon();
+        when(test.size()).thenReturn(pokedex1.size());
+        assertEquals(test.size(), 2);
+	}
+	
+	@Test
+	public void addPokemon() {
+		//Création instance pokemon1
+		Pokemon pokemon1 = new Pokemon(0, "Bulbizarre" , 126, 126, 90, 613, 64, 4000, 4, 56);
+				
+		//Création instance pokemon2
+		Pokemon pokemon2 = new Pokemon(133, "Aquali" , 186, 168, 260, 2729, 202, 5000, 4, 100);
+		
+		pokedex1.add(pokemon1);
+        pokedex1.add(pokemon2);
+        
+        when(test.addPokemon(pokemon1)).thenReturn(pokemon1.getIndex());
+        when(test.addPokemon(pokemon2)).thenReturn(pokemon2.getIndex());
+        
+        assertEquals(test.addPokemon(pokemon1), 0);
+        assertEquals(test.addPokemon(pokemon2), 133);
+	}
+	
+	@Test
+	public void getPokemon() throws PokedexException {
+        addPokemon();        
+        //L'utilisation de "anyInt()" pour donner n'importe quel entier
+        when(test.getPokemon(Mockito.anyInt())).thenReturn(getIndexPok(0));
+        assertEquals(pokedex1.get(0), getIndexPok(0));
+        //assertEquals(pokedex1.get(1), getIndexPok(133));
+    }
+    
+	//Cette fonction permet de vérifier que l'index est entre 0 et 150 et de lever l'exception s'il ne vérifie pas la condition
+    public Pokemon getIndexPok(int index) throws PokedexException {
+        for(int i=0;i<pokedex1.size();i++) {
+            if(pokedex1.get(i).getIndex() == index) {
+                System.out.println(pokedex1.get(i).getIndex());
+                return pokedex1.get(i);
+            }
+        }
+        throw new PokedexException("Vous devez donner un index entre 0 et 150");
+    }
+		
+    @Test
+	public void getPokemons() {
+    	addPokemon();
+    	
+    	//Création instance pokemon1
+    	Pokemon pokemon1 = new Pokemon(0, "Bulbizarre" , 126, 126, 90, 613, 64, 4000, 4, 56);			
+    	//Création instance pokemon2
+    	Pokemon pokemon2 = new Pokemon(133, "Aquali" , 186, 168, 260, 2729, 202, 5000, 4, 100);
+    	
+    	//Crétion de la liste des pokemons par rapport au pokedex
+    	List<Pokemon> pokemonsListe = new ArrayList<Pokemon>();
+    	for(Pokemon pok: pokedex1) {
+    		pokemonsListe.add(pok);
+    	}
+    	pokemonsListe.add(pokemon2);
+    	
+    	when(pokedex1.get(0).getIndex()).thenReturn(pokemonsListe.get(0).getIndex());
+		assertEquals(pokedex1.get(1).getIndex(), 133);
+    	
+    	
+    }
 }
