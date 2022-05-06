@@ -151,7 +151,7 @@
 			</plugin>
 		</plugins>
 		<extensions>
-			<!-- begin - needed for deploying to repository using webdav -->
+			
 			<extension>
 				<groupId>org.apache.maven.wagon</groupId>
 				<artifactId>wagon-webdav</artifactId>
