@@ -1,8 +1,8 @@
 #Les badges:
 
-Nom : GDIRA
-Prénom: Ghizlane
-Groupe : M1 ILSEN GR1 CLA
+**Nom** : GDIRA
+**Prénom**: Ghizlane
+**Groupe** : M1 ILSEN GR1 CLA
 
 #Badge pour CircleCi:
 [![CircleCI](https://circleci.com/gh/GDIRAGhizlane/ceri-m1-techniques-de-test/tree/master.svg?style=svg)](https://circleci.com/gh/GDIRAGhizlane/ceri-m1-techniques-de-test/tree/master)
