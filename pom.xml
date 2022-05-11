@@ -206,7 +206,7 @@
 				<artifactId>wagon-webdav</artifactId>
 				<version>1.0-beta-2</version>
 			</extension>
-			<!-- end - needed for deploying to repository using webdav -->
+			<!-- end - needed for deploying to repository using webda -->
 		</extensions>
 	</build>
 	<reporting>
