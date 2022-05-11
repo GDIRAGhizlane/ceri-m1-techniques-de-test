@@ -16,7 +16,7 @@
 
 #Badge pour le CheckStyle :
 
-[![Checkstyle](target/site/badges/checkstyle-result.svg)][]
+![Checkstyle](target/site/badges/checkstyle-result.svg)
 
 
 # UCE Génie Logiciel Avancé : Techniques de tests
