@@ -39,6 +39,9 @@ jobs:
       - run:
           name: CheckStyle
           command: mvn -DskipTests checkstyle:checkstyle
+      - run:
+          name: Javadoc
+          command: mvn -DskipTests javadoc:javadoc
       - codecov/upload
 
 # Invoke jobs via workflows
