@@ -14,6 +14,9 @@
 
 [![codecov](https://codecov.io/gh/GDIRAGhizlane/ceri-m1-techniques-de-test/branch/master/graph/badge.svg?token=2BIEQ5W8XT)](https://codecov.io/gh/GDIRAGhizlane/ceri-m1-techniques-de-test)
 
+#Badge pour le CheckStyle:
+
+
 
 
 # UCE Génie Logiciel Avancé : Techniques de tests
