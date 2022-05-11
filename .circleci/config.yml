@@ -36,6 +36,9 @@ jobs:
       - run:
           name: Test
           command: mvn test
+      - run:
+          name: CheckStyle
+          command: mvn -DskipTests checkstyle:checkstyle
       - codecov/upload
 
 # Invoke jobs via workflows
