@@ -18,6 +18,9 @@
 
 ![Checkstyle](target/site/badges/checkstyle-result.svg)
 
+#Badge pour JavaDoc :
+
+[![javadoc](https://javadoc.io/badge2/org.springframework/spring-core/javadoc.svg)](https://javadoc.io/doc/org.springframework/spring-core)
 
 # UCE Génie Logiciel Avancé : Techniques de tests
 
