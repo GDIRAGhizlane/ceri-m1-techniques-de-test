@@ -1,14 +1,18 @@
 #Les badges:
 
-**Nom** : GDIRA -- 
-**Prénom**: Ghizlane --
+**Nom** : GDIRA
+
+**Prénom**: Ghizlane
+
 **Groupe** : M1 ILSEN GR1 CLA
 
 #Badge pour CircleCi:
+
 [![CircleCI](https://circleci.com/gh/GDIRAGhizlane/ceri-m1-techniques-de-test/tree/master.svg?style=svg)](https://circleci.com/gh/GDIRAGhizlane/ceri-m1-techniques-de-test/tree/master)
 
 #Badge pour le couverture de test:
---> problème d'uploader 
+
+[![codecov](https://codecov.io/gh/GDIRAGhizlane/ceri-m1-techniques-de-test/branch/master/graph/badge.svg?token=2BIEQ5W8XT)](https://codecov.io/gh/GDIRAGhizlane/ceri-m1-techniques-de-test)
 
 
 
