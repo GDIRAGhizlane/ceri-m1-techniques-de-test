@@ -22,6 +22,8 @@
 
 [![javadoc](https://javadoc.io/badge2/org.springframework/spring-core/javadoc.svg)](https://javadoc.io/doc/org.springframework/spring-core)
 
+[![javadoc](https://javadoc.io/badge2/org.springframework/spring-core/javadoc.svg)](https://GDIRAGhizlane.github.io/ceri-m1-techniques-de-test/target/site/apidocs/)
+
 ---------------------------------------------------------------------------------------------------------------------------------------------
 #Le projet contient plusieurs Interface:
 
