@@ -1,0 +1,15 @@
+Rapport TP6 : Remarques et conclusions
+------------------------------------------------
+
+J'ai intégré la classe RocketPokemonFactory et j'ai implémenté le test de cette dernière en créant la classe RocketPokemonFactoryTest qui va permettre de tester toutes les méthodes de la classe RocketPokemonFactory.
+
+Durant ce TP, j'ai observé plusieurs choses comme:
+
+   --> D'abord, le test qui permet de vérifier la méthode 'getIv()' ne passe pas et affiche une erreur. Cela s'explique par le fait que la classe RocketPokemonFactory inscrit de manière brute (IV = 1), donc lorsqu'on passe en paramètre un IV pour créer un pokemon, celui-ci n'est pas pris en compte.
+Donc on peut dire qu'il faut bien gérer les IV.
+
+   --> Ensuite, on remarque que les index ne sont pas vérifiés (comme dans le TP3). L'index doit être inférieur à 0 et supérieur à 150 et dans ce TP on a le map avec un pokemon à l'index -1 et aucune exception n'est levé pourtant on a un index inférieur à 0.
+Donc on peut dire qu'il faut gérér les exceptions.
+
+   --> J'ai remarqué aussi qu'il y a des erreurs lièes aux checkstyle lorsqu'on a intégré la nouvelle classe RocketPokemonFactory.
+
